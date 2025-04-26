@@ -15,7 +15,7 @@
     $msg = $toast['msg'] ?? '';
 @endphp
 
-<div class="toast toast-start hidden transition duration-250">
+<div class="toast toast-start hidden transition duration-250 z-10">
     <div role="alert" class="alert alert-soft alert-{{ $type }}">
         @svg('phosphor-' . $icon, 'w-6 h-6')
         <span>{{ $msg }}</span>
