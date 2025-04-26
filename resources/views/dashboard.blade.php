@@ -24,11 +24,11 @@
                         class="card w-96 bg-accent card-lg hover:scale-105 hover:-rotate-3 transition ease-in-out duration-300">
                         <div class="card-body text-accent-content">
                             <h1 class="flex justify-between">
-                                <div class="card-title">Today's revenue</div>
+                                <div class="card-title">Revenue</div>
                                 <div class="text-right opacity-50">
                                     <div class="text-xl font-semibold">{{ $revenue }}</div>
                                     <div class="text-xs uppercase tracking-wider">{{ $order === 0 ? 'No' : $order }}
-                                        orders today</div>
+                                        orders.</div>
                                 </div>
                             </h1>
                         </div>
