@@ -11,9 +11,9 @@ class OrderController extends Controller
     public function index()
     {
         $today_count = Order::whereDate('updated_at', today())->count();
-        $total_count = Order::count();
+        $orders = Order::all()->sortBy('updated_at')->load('products');
         
-        return view('customer.order.index', compact('today_count', 'total_count'));
+        return view('customer.order.index', compact('today_count', 'orders'));
     }
 
     public function create()

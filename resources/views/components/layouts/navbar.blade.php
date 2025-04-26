@@ -4,8 +4,8 @@
     </div>
     <ul class="navbar-center menu menu-horizontal gap-x-1">
         <li><a href="{{ route('dashboard') }}" class="{{ request()->is('/') ? 'menu-active' : '' }}">Dashboard</a></li>
-        <li><a href="{{ route('order.create') }}" class="{{ request()->is('order/*') ? 'menu-active' : '' }}">Create order</a></li>
-        <li><a href="{{ route('order.index') }}" class="{{ request()->is('orders') ? 'menu-active' : '' }}">Orders</a></li>
+        <li><a href="{{ route('order.create') }}" class="{{ request()->is('order/*') ? 'menu-active' : '' }}">New order</a></li>
+        <li><a href="{{ route('order.index') }}" class="{{ request()->is('orders') ? 'menu-active' : '' }}">Order history</a></li>
         <li><a href="{{ route('product.index') }}" class="{{ request()->is('products/*', 'products') ? 'menu-active' : '' }}">Products</a></li>
     </ul>
     <div class="navbar-end">

@@ -1,6 +1,6 @@
 <div class="flex items-baseline gap-x-12 p-8 grow">
     <header class="w-xs">
-        <h1 class="text-2xl font-semibold">💵 Create order</h1>
+        <h1 class="text-2xl font-semibold">💵 New order</h1>
         <div class="divider"></div>
 
         <div class="space-y-3">
