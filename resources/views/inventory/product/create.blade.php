@@ -1,12 +1,12 @@
 <x-layouts.app>
     <main class="hero grow">
-        <x-layouts.form method="POST">
+        <x-layouts.form method="POST" action="{{ route('product.store') }}">
             <h1 class="text-2xl font-semibold">Create product</h1>
             <div>
                 <x-forms.input name="name" placeholder="Name" icon="package" />
-                <x-forms.input type="number" name="price" placeholder="Price" icon="coins" />
+                <x-forms.input type="number" step="1000" name="price" placeholder="Price" icon="coins" />
                 <x-forms.input type="number" name="stock" placeholder="Stock" icon="stack" />
-                <x-forms.select name="category" placeholder="Category" icon="tag">
+                <x-forms.select name="category_id" placeholder="Category" icon="tag">
                     @foreach ($categories as $category)
                         <option value="{{ $category->id }}">{{ $category->name }}</option>
                     @endforeach

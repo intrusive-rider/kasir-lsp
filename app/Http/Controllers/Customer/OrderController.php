@@ -4,14 +4,14 @@ namespace App\Http\Controllers\Customer;
 
 use App\Http\Controllers\Controller;
 use App\Models\Customer\Order;
-use App\Http\Requests\PaymentRequest;
+use App\Http\Requests\Customer\PaymentRequest;
 
 class OrderController extends Controller
 {
     public function index()
     {
         $today_count = Order::whereDate('updated_at', today())->count();
-        $orders = Order::all()->sortBy('updated_at')->load('products');
+        $orders = Order::latest()->get()->load('products');
         
         return view('customer.order.index', compact('today_count', 'orders'));
     }

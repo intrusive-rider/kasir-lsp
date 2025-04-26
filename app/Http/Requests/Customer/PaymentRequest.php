@@ -1,9 +1,8 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Customer;
 
 use Illuminate\Foundation\Http\FormRequest;
-use App\Models\Order;
 
 class PaymentRequest extends FormRequest
 {

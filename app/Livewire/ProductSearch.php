@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Models\Inventory\Category;
 use App\Models\Inventory\Product;
 use Livewire\Component;
 
@@ -15,11 +16,7 @@ class ProductSearch extends Component
             ->where('name', 'like', '%' . $this->search . '%')
             ->get();
 
-        $categories = $products->map->category
-            ->filter()
-            ->unique('id')
-            ->values()
-            ->load('products');
+        $categories = Category::all()->load('products');
 
         return view('livewire.product-search', compact('products', 'categories'));
     }
