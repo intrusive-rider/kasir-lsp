@@ -18,6 +18,7 @@
                                 <th class="text-center"></th>
                                 <th>Name</th>
                                 <th>Qty.</th>
+                                <th>Price</th>
                                 <th>Total</th>
                             </tr>
                         </thead>
@@ -27,6 +28,7 @@
                                     <th class="text-center opacity-50 tabular-nums">{{ $loop->iteration }}</th>
                                     <td>{{ $product->name }}</td>
                                     <td class="tabular-nums">&#215;{{ $product->pivot->quantity }}</td>
+                                    <td class="tabular-nums">{{ number_format($product->price) }}</td>
                                     <td class="tabular-nums">
                                         {{ number_format($product->price * $product->pivot->quantity) }}</td>
                                 </tr>
