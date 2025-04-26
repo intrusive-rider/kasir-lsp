@@ -24,7 +24,7 @@
                 <thead>
                     <tr>
                         <th class="text-center w-20"></th>
-                        <th>ID</th>
+                        <th>Items</th>
                         <th>Total</th>
                         <th>Status</th>
                         <th>Date</th>
@@ -37,12 +37,16 @@
                                 <span class="opacity-50 tabular-nums">{{ $loop->iteration }}</span>
                             </td>
                             <td class="w-80 h-16">
-                                <span class="group-hover:hidden">{{ $order->id }}</span>
+                                <ul class="group-hover:hidden list-disc">
+                                    @foreach ($order->products as $product)
+                                        <li>{{ $product->name }}</li>
+                                    @endforeach
+                                </ul>
                                 <div class="drawer">
                                     <input id="order-details" type="checkbox" class="drawer-toggle" />
                                     <div class="drawer-content">
                                         <label for="order-details"
-                                            class="hidden group-hover:inline font-bold link-hover drawer-button">Show
+                                            class="hidden group-hover:inline font-bold link-hover drawer-button">Show more
                                             details</label>
                                     </div>
                                     <div class="drawer-side">
@@ -77,7 +81,8 @@
                                                                     <td class="tabular-nums">
                                                                         &#215;{{ $product->pivot->quantity }}</td>
                                                                     <td class="tabular-nums">
-                                                                        {{ number_format($product->price) }}</td>
+                                                                        {{ number_format($product->price) }}
+                                                                    </td>
                                                                     <td class="tabular-nums">
                                                                         {{ number_format($product->price * $product->pivot->quantity) }}
                                                                     </td>
